@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="style.css" rel="stylesheet" type="text/css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+  <script src="script.js" defer></script>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+
+<body>
+<div class="container">
+  <video autoplay loop muted plays-inline class="background-clip">
+    <source src="Video/Home_video.mp4" type="video/mp4">
+  </video>
+  <div class="content">
+    <h1>Explore more</h1>
+    <a href="#">Start Learning</a>
+  </div>
+</div>
+
+  <p style="font-family: 'Poppins', sans-serif;"> hello</p>
+  <aside class="sidebar">
+    <div class="logo">
+      <img src="Icons/Nav_items/Bini_Logo.png" alt="">
+    </div>
+    <ul class="links">
+      <li><span><img src="Icons/Nav_items/Profiles.png" alt="Profiles"></span><a href="#Profiles">Profiles</a></li>
+      <li><span><img src="Icons/Nav_items/Music.png" alt="Music"></span><a href="#Music" >  Music</a></li>
+      <li><span><img src="Icons/Nav_items/Videos.png" alt="Profiles"></span><a href="#Videos">  Videos</a></li>
+      <li><span><img src="Icons/Nav_items/Shop.png" alt="Profiles"></span><a href="#Shop">  Shop</a></li>
+      <li><span><img src="Icons/Nav_items/Events.png" alt="Profiles"></span><a href="#Events">  Events</a></li>
+      <li><span><img src="Icons/Nav_items/Youtube.png" alt="Profiles"></span><a href="https://www.youtube.com/channel/UCtOcDBKgyr-f50SgbMErFkQ" target="_blank">  Youtube</a></li>
+      <li><span><img src="Icons/Nav_items/X.png" alt="Profiles"></span><a href="https://x.com/BINI_ph" target="_blank">  X</a></li>
+      <li><span><img src="Icons/Nav_items/Spoftify.png" alt="Profiles"></span><a href="https://open.spotify.com/artist/7tNO3vJC9zlHy2IJOx34ga" target="_blank">  Spotify</a></li>
+      <li><span><img src="Icons/Nav_items/Tiktok.png" alt="Profiles"></span><a href="https://www.tiktok.com/@bini_ph" target="_blank">  TikTok</a></li>
+      <li><span><img src="Icons/Nav_items/Facebook.png" alt="Profiles"></span><a href="https://www.facebook.com/BINIph.official/" target="_blank">  Facebook</a></li>
+    </ul>
+  </aside>
+     
+  <script src="script.js"></script>
+  <div class="containerh1" ><h1 id="#Music">Music</h1></div>
+  <div class="body">
+    <div class="container-slider" style="padding-left: 100;">
+  <div class="slider-wrapper">
+    <button id="prev-slide" class="slide-button material-symbols-rounded">
+      chevron_left
+    </button>
+    <ul class="image-list">
+      <img class="image-item" src="Picture/Music/Bini_born_to_win.jpg" alt="img-1" />
+      <img class="image-item" src="Picture/Music/Bini_feelgood.jpg" alt="img-2" />
+      <img class="image-item" src="Picture/Music/Bini_pantropiko.jpg" alt="img-3" />
+      <img class="image-item" src="Picture/Music/Bini_talaarawan.png" alt="img-3" />
+    </ul>
+    <button id="next-slide" class="slide-button material-symbols-rounded">
+      chevron_right
+    </button>
+  </div>
+  <div class="slider-scrollbar">
+    <div class="scrollbar-track">
+      <div class="scrollbar-thumb"></div>
+    </div>
+  </div>
+</div>
+</div>
+<div class="containerh1"><h1 id="#Videos">VIDEOS</h1></div>
+<section>
+  <div class="container-video">
+    <div class="main-video">
+        <video src="Video/Pantropiko.mp4" autoplay muted controls></video>
+        <i class='bx bx-x close'></i>
+    </div>
+    <div class="videos">
+      <video src="Video/NaNaNa.mp4"></video>
+      <i class='bx bx-play-circle'></i>
+    </div>
+    <div class="videos">
+      <video src="Video/Lagi.mp4"></video>
+      <i class='bx bx-play-circle'></i>
+    </div>
+    <div class="videos">
+      <video src="Video/Karera.mp4"></video>
+      <i class='bx bx-play-circle'></i>
+    </div>
+    <div class="videos">
+      <video src="Video/Home_video.mp4"></video>
+      <i class='bx bx-play-circle'></i>
+    </div>
+  </div>
+</section>
+
+<script>
+  const section = document.querySelector("section"),
+  mainVideo = document.querySelector(".main-video video"),
+   videos = document.querySelectorAll(".videos"),
+   close = document.querySelector(".close");
+
+   for (var i = 0; i < videos.length; i++) {
+     videos[i].addEventListener("click", (e)=>{
+       const target = e.target;
+       section.classList.add("active");
+       target.classList.add("active");
+       let src = document.querySelector(".videos.active video").src;
+       mainVideo.src = src;
+
+       close.addEventListener("click", ()=>{
+         section.classList.remove("active");
+         target.classList.remove("active");
+         mainVideo.src = "";
+       });
+     });
+   };
+</script>
+</body>
+
+</html>
